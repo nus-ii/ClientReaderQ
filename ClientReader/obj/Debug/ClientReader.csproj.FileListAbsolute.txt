@@ -1,1 +1,7 @@
 c:\users\i.zharov\documents\visual studio 2013\Projects\ClientReader\ClientReader\bin\Debug\ClientReader.exe.config
+C:\Projects\ClientReaderQ\ClientReader\bin\Debug\ClientReader.exe.config
+C:\Projects\ClientReaderQ\ClientReader\bin\Debug\ClientReader.exe
+C:\Projects\ClientReaderQ\ClientReader\bin\Debug\ClientReader.pdb
+C:\Projects\ClientReaderQ\ClientReader\obj\Debug\ClientReader.csprojResolveAssemblyReference.cache
+C:\Projects\ClientReaderQ\ClientReader\obj\Debug\ClientReader.exe
+C:\Projects\ClientReaderQ\ClientReader\obj\Debug\ClientReader.pdb
