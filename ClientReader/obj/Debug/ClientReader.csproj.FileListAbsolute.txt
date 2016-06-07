@@ -1,0 +1,1 @@
+c:\users\i.zharov\documents\visual studio 2013\Projects\ClientReader\ClientReader\bin\Debug\ClientReader.exe.config
