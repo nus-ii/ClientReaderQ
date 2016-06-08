@@ -1,0 +1,4 @@
+Kommentar;0;string;false;Path;
+ClientType;1;string;true;ClientType;
+Name;2;string;true;Name;
+Number;3;int;true;Number;
