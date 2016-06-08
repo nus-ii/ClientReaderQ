@@ -34,12 +34,37 @@ namespace UserReaderLibrary
 		{
 			switch (mapLine.TypeValue)
 			{
+					//target.SelectToken(mapLine.Path)
 				case "int":
-					target[mapLine.Path]=new JValue(Convert.ToInt32(data[mapLine.PositionInt]));
+					//target[mapLine.Path]=new JValue(Convert.ToInt32(data[mapLine.PositionInt]));
+					CreateTokenI(mapLine.Path.Split('.'), ref target, Convert.ToInt32(data[mapLine.PositionInt]));
 					break;
 				default:
-					target[mapLine.Path] = new JValue(data[mapLine.PositionInt]);
+					//target[mapLine.Path] = new JValue(data[mapLine.PositionInt]);
+					CreateTokenS(mapLine.Path.Split('.'), ref target, data[mapLine.PositionInt]);
 					break;
+			}
+		}
+
+		private static JObject CreateTokenI(string[] tree, ref JObject target, int toInt32)
+		{
+			if (tree.Length == 1)
+			{
+				target[tree[0]] = new JValue(toInt32);
+				return target;
+			}
+			else
+			{
+				target[tree[0]] = new JObject();
+				var temp = (JObject)target[tree[0]];
+
+				string[] tempTree = new string[tree.Length - 1];
+
+				for (int q = 0; q < tempTree.Length; q++)
+				{
+					tempTree[q] = tree[q + 1] + "";
+				}
+				return CreateTokenI(tempTree, ref temp, toInt32);
 			}
 		}
 
@@ -73,5 +98,30 @@ namespace UserReaderLibrary
 
 			return resulrList;
 		}
+
+
+		public static JObject CreateTokenS(string[] tree,ref JObject target, string value)
+		{
+			if (tree.Length==1)
+			{
+				target[tree[0]] = new JValue(value);
+				return target;
+			}
+			else
+			{
+				target[tree[0]] = new JObject();
+				var temp = (JObject)target[tree[0]];
+
+				string[] tempTree = new string[tree.Length-1];
+
+				for (int q = 0; q < tempTree.Length; q++)
+				{
+					tempTree[q] = tree[q + 1] + "";
+				}
+				return CreateTokenS(tempTree, ref temp, value);
+			}
+		}
+
+
 	}
 }
