@@ -46,27 +46,7 @@ namespace UserReaderLibrary
 			}
 		}
 
-		private static JObject CreateTokenI(string[] tree, ref JObject target, int toInt32)
-		{
-			if (tree.Length == 1)
-			{
-				target[tree[0]] = new JValue(toInt32);
-				return target;
-			}
-			else
-			{
-				target[tree[0]] = new JObject();
-				var temp = (JObject)target[tree[0]];
-
-				string[] tempTree = new string[tree.Length - 1];
-
-				for (int q = 0; q < tempTree.Length; q++)
-				{
-					tempTree[q] = tree[q + 1] + "";
-				}
-				return CreateTokenI(tempTree, ref temp, toInt32);
-			}
-		}
+		
 
 		public static JObject MegaProcessLine(string line, List<MapLine>[] maps, ref JObject target,string selectorPath, string[] selectorValues)
 		{
@@ -99,9 +79,68 @@ namespace UserReaderLibrary
 			return resulrList;
 		}
 
+		private static JObject CreateTokenI(string[] tree, ref JObject target, int toInt32)
+		{
+			bool haveLeaf = false;
+
+			try
+			{
+				var t=target.SelectToken(tree[0]);
+				if (t != null)
+					haveLeaf = true;
+			}
+			catch (Exception)
+			{
+				haveLeaf = false;
+			}
+
+			if (tree.Length == 1)
+			{
+				target[tree[0]] = new JValue(toInt32);
+				return target;
+			}
+			else
+			{
+				JObject temp=new JObject();
+				if (haveLeaf)
+				{
+					temp = (JObject)target.SelectToken(tree[0]);
+				}
+				else
+				{
+					target[tree[0]] = new JObject(); 
+					temp = (JObject)target[tree[0]];
+				}
+				
+				
+
+				string[] tempTree = new string[tree.Length - 1];
+
+				for (int q = 0; q < tempTree.Length; q++)
+				{
+					tempTree[q] = tree[q + 1] + "";
+				}
+				return CreateTokenI(tempTree, ref temp, toInt32);
+			}
+		}
+
 
 		public static JObject CreateTokenS(string[] tree,ref JObject target, string value)
 		{
+			bool haveLeaf = false;
+
+			try
+			{
+				var t = target.SelectToken(tree[0]);
+				if (t != null)
+					haveLeaf = true;
+			}
+			catch (Exception)
+			{
+				haveLeaf = false;
+			}
+
+
 			if (tree.Length==1)
 			{
 				target[tree[0]] = new JValue(value);
@@ -109,8 +148,16 @@ namespace UserReaderLibrary
 			}
 			else
 			{
-				target[tree[0]] = new JObject();
-				var temp = (JObject)target[tree[0]];
+				JObject temp = new JObject();
+				if (haveLeaf)
+				{
+					temp = (JObject)target.SelectToken(tree[0]);
+				}
+				else
+				{
+					target[tree[0]] = new JObject();
+					temp = (JObject)target[tree[0]];
+				}
 
 				string[] tempTree = new string[tree.Length-1];
 

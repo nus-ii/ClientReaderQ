@@ -1,1 +1,3 @@
-INN;4;int;true;U.L.D.A.T.A.INN;
+INN;4;int;true;ULDATA.INN;
+Bank;5;string;true;ULDATA.Bank.BankName;
+BIK;6;int;true;ULDATA.Bank.BIK;
