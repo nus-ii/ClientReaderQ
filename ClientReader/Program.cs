@@ -24,16 +24,11 @@ namespace ClientReader
 			string filePathData = @"Data.csv";
 
 			string selectorPath = "ClientType";
-			string[] selectorValues=new string[2];
-			selectorValues[0] = "FL";
-			selectorValues[1] = "UL";
+			Dictionary<string,List<MapLine>> selectorDictionary=new Dictionary<string, List<MapLine>>();
+			selectorDictionary.Add("FL",flMap);
+			selectorDictionary.Add("UL", ulMap);
 
-			List<MapLine>[] maps=new List<MapLine>[2];
-			maps[0] = flMap;
-			maps[1] = ulMap;
-
-			var bigResult = UserReaderLibrary.DataProcessor.Process(StreamFile(filePathData), baseMap, maps, selectorPath,
-				selectorValues);
+			var bigResult = DataProcessor.Process(StreamFile(filePathData), baseMap, selectorPath, selectorDictionary);
 
 			Console.ReadLine();
 		}

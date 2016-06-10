@@ -61,10 +61,31 @@ namespace UserReaderLibrary
 		}
 
 
+		private static JObject MegaProcessLine(string line, ref JObject target, string selectorPath, Dictionary<string, List<MapLine>> selectorDictionary)
+		{
+			//for (int i = 0; i < selectorValues.Length; i++)
+			//{
+			//	if (selectorValues[i].Equals(target[selectorPath].Value<string>(), StringComparison.Ordinal))
+			//	{
+			//		return ProcessLine(line, maps[i], target);
+			//	}
+			//}
+
+			foreach (var selectorP in selectorDictionary)
+			{
+				if (selectorP.Key.Equals(target[selectorPath].Value<string>(), StringComparison.Ordinal))
+				{
+					return ProcessLine(line, selectorP.Value, target);
+				}
+			}
+			throw new ArgumentException("Нет нужной таблицы");
+		}
+
+
 		public static List<JObject> Process(StreamReader rdr, List<MapLine> mainMap, List<MapLine>[] maps,
 			string selectorPath, string[] selectorValues)
 		{
-			List<JObject> resulrList=new List<JObject>();
+			List<JObject> resultList=new List<JObject>();
 
 			var line = rdr.ReadLine();
 			while (line != null)
@@ -72,11 +93,30 @@ namespace UserReaderLibrary
 				//var cols = line.Split(';');
 				var temp = ProcessLine(line, mainMap);
 				var tempB = MegaProcessLine(line, maps, ref temp, selectorPath, selectorValues);
-				resulrList.Add(tempB);
+				resultList.Add(tempB);
 				line = rdr.ReadLine();
 			}
 
-			return resulrList;
+			return resultList;
+		}
+
+
+		public static List<JObject> Process(StreamReader rdr, List<MapLine> mainMap, string selectorPath,
+			Dictionary<string, List<MapLine>> selectorDictionary)
+		{
+			List<JObject> resultList = new List<JObject>();
+
+			var line = rdr.ReadLine();
+			while (line != null)
+			{
+				//var cols = line.Split(';');
+				var temp = ProcessLine(line, mainMap);
+				var tempB = MegaProcessLine(line, ref temp, selectorPath, selectorDictionary);
+				resultList.Add(tempB);
+				line = rdr.ReadLine();
+			}
+
+			return resultList;
 		}
 
 		private static JObject CreateTokenI(string[] tree, ref JObject target, int toInt32)
@@ -170,5 +210,7 @@ namespace UserReaderLibrary
 		}
 
 
+		
 	}
+
 }
