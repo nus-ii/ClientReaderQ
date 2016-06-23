@@ -12,7 +12,7 @@ namespace ClientReader
 	{
 		static void Main(string[] args)
 		{
-            //Привет парень
+            //Привет парень, это правки с ноутбука
 			string filePathMap = @"BaseMap.csv";
 			var baseMap = MapReader.Read(StreamFile(filePathMap));
 
