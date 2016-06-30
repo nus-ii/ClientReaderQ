@@ -12,6 +12,13 @@ namespace UserReaderLibrary
 {
 	public class DataProcessor
 	{
+		/// <summary>
+		/// Создание объекта из одной строчки файла
+		/// </summary>
+		/// <param name="line">Исходная строка</param>
+		/// <param name="map">Карта</param>
+		/// <param name="target">Целевой объект</param>
+		/// <returns></returns>
 		public static JObject ProcessLine(string line, List<MapLine> map,JObject target=null)
 		{
 			if (target == null)
@@ -29,56 +36,109 @@ namespace UserReaderLibrary
 			return target;
 		}
 
-
+		/// <summary>
+		/// Добавляет значение в переданный объект
+		/// </summary>
+		/// <param name="target">Целевой объект</param>
+		/// <param name="data">Массив соответствующий входной строке данных</param>
+		/// <param name="mapLine">Строка карты</param>
 		public static void AddValue(ref JObject target, string[] data, MapLine mapLine)
 		{
 			switch (mapLine.TypeValue)
 			{
-					//target.SelectToken(mapLine.Path)
+                //TODO: Точка врезки новых типов
 				case "int":
-					//target[mapLine.Path]=new JValue(Convert.ToInt32(data[mapLine.PositionInt]));
 					CreateTokenI(mapLine.Path.Split('.'), ref target, Convert.ToInt32(data[mapLine.PositionInt]));
 					break;
 				default:
-					//target[mapLine.Path] = new JValue(data[mapLine.PositionInt]);
 					CreateTokenS(mapLine.Path.Split('.'), ref target, data[mapLine.PositionInt]);
 					break;
 			}
 		}
 
-		
+		//public static JObject MegaProcessLine(string line, List<MapLine>[] maps, ref JObject target,string selectorPath, string[] selectorValues)
+		//{
+		//	for (int i = 0; i < selectorValues.Length; i++)
+		//	{
+		//		if (selectorValues[i].Equals(target[selectorPath].Value<string>(), StringComparison.Ordinal))
+		//		{
+		//			return ProcessLine(line, maps[i], target);
+		//		}
+		//	}
+		//	throw new ArgumentException("Нет нужной таблицы");
+		//}
 
-		public static JObject MegaProcessLine(string line, List<MapLine>[] maps, ref JObject target,string selectorPath, string[] selectorValues)
+		/// <summary>
+		/// Обработка строки пакетом карт 
+		/// </summary>
+		/// <param name="line">Строка для разбора</param>
+		/// <param name="target">Целевой объект</param>
+		/// <param name="selectorPath">Путь к признаку</param>
+		/// <param name="selectorDictionary">Пакет карт</param>
+		/// <returns></returns>
+		private static JObject MegaProcessLine(string line, ref JObject target, string selectorPath, Dictionary<string, List<MapLine>> selectorDictionary)
 		{
-			for (int i = 0; i < selectorValues.Length; i++)
+
+			foreach (var selectorP in selectorDictionary)
 			{
-				if (selectorValues[i].Equals(target[selectorPath].Value<string>(), StringComparison.Ordinal))
+				if (selectorP.Key.Equals(target[selectorPath].Value<string>(), StringComparison.Ordinal))
 				{
-					return ProcessLine(line, maps[i], target);
+					return ProcessLine(line, selectorP.Value, target);
 				}
 			}
 			throw new ArgumentException("Нет нужной таблицы");
 		}
 
+		//public static List<JObject> Process(StreamReader rdr, List<MapLine> mainMap, List<MapLine>[] maps,
+		//	string selectorPath, string[] selectorValues)
+		//{
+		//	List<JObject> resultList=new List<JObject>();
 
-		public static List<JObject> Process(StreamReader rdr, List<MapLine> mainMap, List<MapLine>[] maps,
-			string selectorPath, string[] selectorValues)
+		//	var line = rdr.ReadLine();
+		//	while (line != null)
+		//	{
+		//		var temp = ProcessLine(line, mainMap);
+		//		var tempB = MegaProcessLine(line, maps, ref temp, selectorPath, selectorValues);
+		//		resultList.Add(tempB);
+		//		line = rdr.ReadLine();
+		//	}
+
+		//	return resultList;
+		//}
+
+		/// <summary>
+		/// Главный метод разбора
+		/// </summary>
+		/// <param name="rdr">Файл с данными</param>
+		/// <param name="mainMap">Базовая схема разбора</param>
+		/// <param name="selectorPath">Путь к признаку типа объекта</param>
+		/// <param name="selectorDictionary">Словарь Значение признака-соответсвующая карта</param>
+		/// <returns></returns>
+		public static List<JObject> Process(StreamReader rdr, List<MapLine> mainMap, string selectorPath,
+			Dictionary<string, List<MapLine>> selectorDictionary)
 		{
-			List<JObject> resulrList=new List<JObject>();
-
+			List<JObject> resultList = new List<JObject>();
 			var line = rdr.ReadLine();
 			while (line != null)
 			{
-				//var cols = line.Split(';');
+				//Разбор по базовой карте
 				var temp = ProcessLine(line, mainMap);
-				var tempB = MegaProcessLine(line, maps, ref temp, selectorPath, selectorValues);
-				resulrList.Add(tempB);
+
+				//Разбор по дополнительным картам
+				var tempB = MegaProcessLine(line, ref temp, selectorPath, selectorDictionary);
+				resultList.Add(tempB);
 				line = rdr.ReadLine();
 			}
-
-			return resulrList;
+			return resultList;
 		}
 
+		/// <summary>
+		/// Создаёт в переданном объекте значение типа int
+		/// </summary>
+		/// <param name="tree">Путь к значению в целевом объекте</param>
+		/// <param name="target">Целевой объект</param>
+		/// <param name="toInt32">Целевое значение</param>
+		/// <returns></returns>
 		private static JObject CreateTokenI(string[] tree, ref JObject target, int toInt32)
 		{
 			bool haveLeaf = false;
@@ -124,7 +184,13 @@ namespace UserReaderLibrary
 			}
 		}
 
-
+		/// <summary>
+		/// Создание в переданном объекте значения типа строка 
+		/// </summary>
+		/// <param name="tree">Путь к значению в целевом объекте</param>
+		/// <param name="target">Целевой объект</param>
+		/// <param name="value">Целевое значение</param>
+		/// <returns></returns>
 		public static JObject CreateTokenS(string[] tree,ref JObject target, string value)
 		{
 			bool haveLeaf = false;
@@ -170,5 +236,7 @@ namespace UserReaderLibrary
 		}
 
 
+		
 	}
+
 }

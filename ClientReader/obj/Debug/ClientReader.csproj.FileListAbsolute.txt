@@ -9,3 +9,15 @@ C:\Projects\ClientReaderQ\ClientReader\bin\Debug\UserReaderLibrary.dll
 C:\Projects\ClientReaderQ\ClientReader\bin\Debug\UserReaderLibrary.pdb
 C:\Projects\ClientReaderQ\ClientReader\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\ClientReaderQ\ClientReader\bin\Debug\Newtonsoft.Json.xml
+C:\Github\ClientReaderQ\ClientReader\bin\Debug\ClientReader.exe.config
+C:\Github\ClientReaderQ\ClientReader\obj\Debug\ClientReader.exe
+C:\Github\ClientReaderQ\ClientReader\obj\Debug\ClientReader.pdb
+C:\Github\ClientReaderQ\ClientReader\bin\Debug\ClientReader.exe
+C:\Github\ClientReaderQ\ClientReader\bin\Debug\ClientReader.pdb
+C:\Github\ClientReaderQ\ClientReader\bin\Debug\Newtonsoft.Json.dll
+C:\Github\ClientReaderQ\ClientReader\bin\Debug\UserReaderLibrary.dll
+C:\Github\ClientReaderQ\ClientReader\bin\Debug\UserReaderLibrary.pdb
+C:\Github\ClientReaderQ\ClientReader\bin\Debug\Newtonsoft.Json.xml
+C:\Github\ClientReaderQ\ClientReader\obj\Debug\ClientReader.csprojResolveAssemblyReference.cache
+C:\Github\ClientReaderQ\ClientReader\bin\Debug\ClientReaderSettings.dll
+C:\Github\ClientReaderQ\ClientReader\bin\Debug\ClientReaderSettings.pdb

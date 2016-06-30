@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using UserReaderLibrary;
+using ClientReaderSettings;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ClientReader
 {
@@ -12,7 +16,12 @@ namespace ClientReader
 	{
 		static void Main(string[] args)
 		{
-            //Привет парень
+			//Создание настроек
+			var s=new Settings();
+			var js = JsonConvert.SerializeObject(s);
+			File.WriteAllText("s.set",js);
+
+            //Привет парень, это правки с рабочего от 30.06.16
 			string filePathMap = @"BaseMap.csv";
 			var baseMap = MapReader.Read(StreamFile(filePathMap));
 
@@ -25,16 +34,11 @@ namespace ClientReader
 			string filePathData = @"Data.csv";
 
 			string selectorPath = "ClientType";
-			string[] selectorValues=new string[2];
-			selectorValues[0] = "FL";
-			selectorValues[1] = "UL";
+			Dictionary<string,List<MapLine>> selectorDictionary=new Dictionary<string, List<MapLine>>();
+			selectorDictionary.Add("FL",flMap);
+			selectorDictionary.Add("UL", ulMap);
 
-			List<MapLine>[] maps=new List<MapLine>[2];
-			maps[0] = flMap;
-			maps[1] = ulMap;
-
-			var bigResult = UserReaderLibrary.DataProcessor.Process(StreamFile(filePathData), baseMap, maps, selectorPath,
-				selectorValues);
+			var bigResult = DataProcessor.Process(StreamFile(filePathData), baseMap, selectorPath, selectorDictionary);
 
 			Console.ReadLine();
 		}
