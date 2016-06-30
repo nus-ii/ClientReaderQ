@@ -1,0 +1,7 @@
+C:\Github\ClientReaderQ\ClientReaderSettings\bin\Debug\ClientReaderSettings.dll
+C:\Github\ClientReaderQ\ClientReaderSettings\bin\Debug\ClientReaderSettings.pdb
+C:\Github\ClientReaderQ\ClientReaderSettings\bin\Debug\Newtonsoft.Json.dll
+C:\Github\ClientReaderQ\ClientReaderSettings\bin\Debug\Newtonsoft.Json.xml
+C:\Github\ClientReaderQ\ClientReaderSettings\obj\Debug\ClientReaderSettings.dll
+C:\Github\ClientReaderQ\ClientReaderSettings\obj\Debug\ClientReaderSettings.pdb
+C:\Github\ClientReaderQ\ClientReaderSettings\obj\Debug\ClientReaderSettings.csprojResolveAssemblyReference.cache
