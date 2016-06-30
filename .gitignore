@@ -1,0 +1,7 @@
+*.dll
+ClientReader/bin/Debug/UserReaderLibrary.dll
+*.exe
+*.dll
+*.dll
+UserReaderLibrary/obj/Debug/UserReaderLibrary.dll
+*.dll
