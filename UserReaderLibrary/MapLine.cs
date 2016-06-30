@@ -8,18 +8,34 @@ namespace UserReaderLibrary
 {
 	public class MapLine
 	{
+		/// <summary>
+		/// Название значения
+		/// </summary>
 		public string Name;
 
+		/// <summary>
+		/// Номер столбца во входном файле - string
+		/// </summary>
 		public string Position;
 
+		/// <summary>
+		/// Тип значения
+		/// </summary>
 		public string TypeValue;
 
-		public string Value;
-
+		/// <summary>
+		/// Признак обязательности значения - string
+		/// </summary>
 		public string RequiredValue;
 
+		/// <summary>
+		/// Путь в выходном файле
+		/// </summary>
 		public string Path;
 
+		/// <summary>
+		/// Признак обязательности значения - bool
+		/// </summary>
 		public bool RqValue
 		{
 			get
@@ -35,6 +51,9 @@ namespace UserReaderLibrary
 			}
 		}
 
+		/// <summary>
+		///  Номер столбца во входном файле - int
+		/// </summary>
 		public int PositionInt
 		{
 			get { return Convert.ToInt32(Position); }
