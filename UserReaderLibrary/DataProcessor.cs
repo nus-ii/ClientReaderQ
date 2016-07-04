@@ -48,14 +48,62 @@ namespace UserReaderLibrary
 			{
                 //TODO: Точка врезки новых типов
 				case "int":
-					CreateTokenI(mapLine.Path.Split('.'), ref target, Convert.ToInt32(data[mapLine.PositionInt]));
+					CreateToken<int>(mapLine.Path.Split('.'), ref target, Convert.ToInt32(data[mapLine.PositionInt]));
+					break;
+				case "decimal":
+					CreateToken<decimal>(mapLine.Path.Split('.'), ref target, Convert.ToDecimal(data[mapLine.PositionInt]));
+					break;
+				case "date":
+					CreateToken<DateTime>(mapLine.Path.Split('.'), ref target, DateTime.Parse(data[mapLine.PositionInt]));
 					break;
 				default:
-					CreateTokenS(mapLine.Path.Split('.'), ref target, data[mapLine.PositionInt]);
+					CreateToken<string>(mapLine.Path.Split('.'), ref target, data[mapLine.PositionInt]);
 					break;
 			}
 		}
 
+		private static JObject CreateToken<TData>(string[] tree, ref JObject target, TData value)
+		{
+			bool haveLeaf = false;
+
+			try
+			{
+				var t = target.SelectToken(tree[0]);
+				if (t != null)
+					haveLeaf = true;
+			}
+			catch (Exception)
+			{
+				haveLeaf = false;
+			}
+
+			if (tree.Length == 1)
+			{
+				target[tree[0]] = new JValue(value);
+				return target;
+			}
+			else
+			{
+				JObject temp = new JObject();
+				if (haveLeaf)
+				{
+					temp = (JObject)target.SelectToken(tree[0]);
+				}
+				else
+				{
+					target[tree[0]] = new JObject();
+					temp = (JObject)target[tree[0]];
+				}
+
+				string[] tempTree = new string[tree.Length - 1];
+
+				for (int q = 0; q < tempTree.Length; q++)
+				{
+					tempTree[q] = tree[q + 1] + "";
+				}
+				return CreateToken<TData>(tempTree, ref temp, value);
+			}
+		}
 		//public static JObject MegaProcessLine(string line, List<MapLine>[] maps, ref JObject target,string selectorPath, string[] selectorValues)
 		//{
 		//	for (int i = 0; i < selectorValues.Length; i++)

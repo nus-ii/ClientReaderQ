@@ -5,3 +5,12 @@ ClientReader/bin/Debug/UserReaderLibrary.dll
 *.dll
 UserReaderLibrary/obj/Debug/UserReaderLibrary.dll
 *.dll
+*.dll
+ClientReader/bin/Debug/UserReaderLibrary.dll
+*.dll
+UserReaderLibrary/obj/Debug/UserReaderLibrary.dll
+*.dll
+ClientReader/bin/Debug/UserReaderLibrary.dll
+*.exe
+ClientReader/obj/Debug/ClientReader.exe
+*.exe
