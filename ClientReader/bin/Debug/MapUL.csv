@@ -1,3 +1,5 @@
 INN;4;int;true;ULDATA.INN;
 Bank;5;string;true;ULDATA.Bank.BankName;
 BIK;6;int;true;ULDATA.Bank.BIK;
+Coef;7;decimal;true;Coefficient;
+Date;8;date;true;Date;

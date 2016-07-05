@@ -17,30 +17,12 @@ namespace ClientReader
 		static void Main(string[] args)
 		{
 			//Привет парень, это правки с рабочего от 05.07.16
-			//Создание настроек
-			//var s=new Settings();
-			//var js = JsonConvert.SerializeObject(s);
-			//File.WriteAllText("settings.json",js);
-
 			var ss = File.ReadAllText("settings.json");
 			var settings = JsonConvert.DeserializeObject<Settings>(ss);
-            
-			string filePathMap = @"BaseMap.csv";
-			var baseMap = MapReader.Read(StreamFile(settings.BaseMapPath));//StreamFile(filePathMap));
 
-			//string filePathMapFl = @"MapFL.csv";
-			//var flMap = MapReader.Read(StreamFile(filePathMapFl));
-
-			//string filePathMapUl = @"MapUL.csv";
-			//var ulMap = MapReader.Read(StreamFile(filePathMapUl));
-
-			string filePathData =settings.DataPath;//@"Data.csv";
-
-			string selectorPath = settings.SpecialMap.SelectorPath;//"ClientType";
-			//Dictionary<string,List<MapLine>> selectorDictionary=new Dictionary<string, List<MapLine>>();
-			//selectorDictionary.Add("FL",flMap);
-			//selectorDictionary.Add("UL", ulMap);
-
+			var baseMap = MapReader.Read(StreamFile(settings.BaseMapPath));
+			string filePathData =settings.DataPath;
+			string selectorPath = settings.SpecialMap.SelectorPath;
 			Dictionary<string, List<MapLine>> dictionaryFromSettings = ReadDict(settings);
 
 			var bigResult = DataProcessor.Process(StreamFile(filePathData), baseMap, selectorPath, dictionaryFromSettings);
