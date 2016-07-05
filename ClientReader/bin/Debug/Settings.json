@@ -1,23 +1,22 @@
 {
-	"Settings" : {
-		"BaseMapPath" : "BaseMap.csv",
-		"SpecMaps" : {
-			"SelectorPath" : "ClientType",
-			"Maps" : [{
-					"SelectorValue" : "FL",
-					"Path" : "MapFL.csv"
-				}, {
-					"SelectorValue" : "UL",
-					"Path" : "MapUL.csv"
-				}
-			],
-		},
-		"DataPath" : "Data.csv",
-		"Save" : {
-			"OneFile" : true,
-			"MaxItemsInFile" : 10,
-			"FileName" : "Out",
-			"FileFolder" : ""
-		},
+	"BaseMapPath" : "BaseMap.csv",
+	"DataPath" : "Data.csv",
+	"SpecialMap" : {
+		"SelectorPath" : "ClientType",
+		"Maps" : [{
+				"SelectorValue" : "FL",
+				"Path" : "MapFL.csv"
+			}, {
+				"SelectorValue" : "UL",
+				"Path" : "MapUL.csv"
+			}
+		]
 	},
+	"SaveSettings" : {
+		"OneFile" : true,
+		"MaxItemInFile" : 10,
+		"FileName" : "result",
+		"FileFolder" : "",
+		"FileExt" : ".json"
+	}
 }

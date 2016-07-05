@@ -17,12 +17,5 @@ namespace ClientReaderSettings
 			SelectorPath = selectorPath;
 			Maps = maps;
 		}
-
-		public SpecMap()
-		{
-			SelectorPath = "Client";
-			Maps=new List<Map>();
-			Maps.Add(new Map());
-		}
 	}
 }
