@@ -19,3 +19,7 @@ ClientReader/bin/Debug/UserReaderLibrary.dll
 *.dll
 ClientReader/bin/Debug/UserReaderLibrary.dll
 *.exe
+UserReaderLibrary/bin/Debug/UserReaderLibrary.dll
+ClientReader/bin/Debug/UserReaderLibrary.dll
+*.exe
+ClientReader/bin/Debug/ClientReader.exe
