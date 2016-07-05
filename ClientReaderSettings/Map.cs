@@ -18,9 +18,5 @@ namespace ClientReaderSettings
 			Path = path;
 		}
 
-		public Map() : this("gh","w.csv")
-		{
-			
-		}
 	}
 }

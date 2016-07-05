@@ -14,14 +14,6 @@ namespace ClientReaderSettings
 		public SpecMap SpecialMap;
 		public Save SaveSettings;
 
-		public Settings()
-		{
-			BaseMapPath = "BaseMap.csv";
-			DataPath = "Data.csv";
-
-			SpecialMap=new SpecMap();
-			SaveSettings=new Save("","efefef",10,true,".json");
-		}
 	}
 
 

@@ -16,12 +16,15 @@ namespace ClientReader
 	{
 		static void Main(string[] args)
 		{
+			//Привет парень, это правки с рабочего от 05.07.16
 			//Создание настроек
-			var s=new Settings();
-			var js = JsonConvert.SerializeObject(s);
-			File.WriteAllText("s.set",js);
+			//var s=new Settings();
+			//var js = JsonConvert.SerializeObject(s);
+			//File.WriteAllText("settings.json",js);
 
-            //Привет парень, это правки с рабочего от 30.06.16
+			var ss = File.ReadAllText("settings.json");
+			var settings = JsonConvert.DeserializeObject<Settings>(ss);
+            
 			string filePathMap = @"BaseMap.csv";
 			var baseMap = MapReader.Read(StreamFile(filePathMap));
 
@@ -40,6 +43,10 @@ namespace ClientReader
 
 			var bigResult = DataProcessor.Process(StreamFile(filePathData), baseMap, selectorPath, selectorDictionary);
 
+			foreach (var jo in bigResult)
+			{
+				Console.WriteLine(jo.ToString());
+			}
 			Console.ReadLine();
 		}
 
