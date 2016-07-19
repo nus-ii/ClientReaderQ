@@ -31,7 +31,11 @@ namespace ClientReaderSettings
 			MaxItemInFile = 10;
 			FileExt = ".json";
 			OneFile = true;
+		}
 
+		public string GetFileFullName()
+		{
+			return FileFolder + FileName + FileExt;
 		}
 	}
 }

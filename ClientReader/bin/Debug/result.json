@@ -1,0 +1,94 @@
+[
+  {
+    "Path": "Privet",
+    "ClientType": "FL",
+    "Name": "Den",
+    "Number": 456,
+    "LastName": "Brown"
+  },
+  {
+    "Path": "Ugly",
+    "ClientType": "UL",
+    "Name": "Romashka",
+    "Number": 789,
+    "ULDATA": {
+      "INN": 546416641,
+      "Bank": {
+        "BankName": "Sber",
+        "BIK": 777
+      }
+    },
+    "Coefficient": 45.745,
+    "Date": "1980-01-01T00:00:00"
+  },
+  {
+    "Path": "World",
+    "ClientType": "FL",
+    "Name": "Fox",
+    "Number": 45678,
+    "LastName": "Red"
+  },
+  {
+    "Path": "World",
+    "ClientType": "FL",
+    "Name": "dv",
+    "Number": 45679,
+    "LastName": "wfy"
+  },
+  {
+    "Path": "World",
+    "ClientType": "FL",
+    "Name": "qq",
+    "Number": 45680,
+    "LastName": "yjyj"
+  },
+  {
+    "Path": "World",
+    "ClientType": "FL",
+    "Name": "sykykju",
+    "Number": 45681,
+    "LastName": "yjyddas"
+  },
+  {
+    "Path": "World",
+    "ClientType": "FL",
+    "Name": "tgb",
+    "Number": 45682,
+    "LastName": "afafcafc"
+  },
+  {
+    "Path": "World",
+    "ClientType": "FL",
+    "Name": "ffg",
+    "Number": 45683,
+    "LastName": "avqqqeqr"
+  },
+  {
+    "Path": "World",
+    "ClientType": "FL",
+    "Name": "asfaf",
+    "Number": 45684,
+    "LastName": "ykykylk"
+  },
+  {
+    "Path": "World",
+    "ClientType": "FL",
+    "Name": "ffb",
+    "Number": 45685,
+    "LastName": "tjtjtj"
+  },
+  {
+    "Path": "World",
+    "ClientType": "FL",
+    "Name": "fbbfb",
+    "Number": 45686,
+    "LastName": "ioiiuo"
+  },
+  {
+    "Path": "World",
+    "ClientType": "FL",
+    "Name": "qqet",
+    "Number": 45687,
+    "LastName": "yyukykyk"
+  }
+]

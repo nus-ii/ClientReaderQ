@@ -17,7 +17,7 @@ namespace ClientReader
 		static void Main(string[] args)
 		{
 			//Привет парень, это правки с рабочего от 05.07.16
-			var ss = File.ReadAllText("settings.json");
+			var ss = File.ReadAllText("Settings.json");
 			var settings = JsonConvert.DeserializeObject<Settings>(ss);
 
 			var baseMap = MapReader.Read(StreamFile(settings.BaseMapPath));
@@ -27,11 +27,34 @@ namespace ClientReader
 
 			var bigResult = DataProcessor.Process(StreamFile(filePathData), baseMap, selectorPath, dictionaryFromSettings);
 
+			bool success = ResultSave(bigResult, settings.SaveSettings);
+
 			foreach (var jo in bigResult)
 			{
 				Console.WriteLine(jo.ToString());
 			}
+			
 			Console.ReadLine();
+		}
+
+		private static bool ResultSave(List<JObject> bigResult, Save saveSettings)
+		{
+			if (saveSettings.OneFile)
+			{
+				JArray result=new JArray();
+
+				foreach (var jo in bigResult)
+				{
+					result.Add(jo);
+				}
+
+				File.WriteAllText(saveSettings.GetFileFullName(),result.ToString());
+			}
+			else
+			{
+				throw new NotImplementedException();
+			}
+			return false;
 		}
 
 		private static Dictionary<string, List<MapLine>> ReadDict(Settings set)
