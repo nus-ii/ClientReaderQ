@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientReader", "ClientReade
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserReaderLibrary", "UserReaderLibrary\UserReaderLibrary.csproj", "{0777DB9C-9EA8-4061-951E-9DD7C088784C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientReaderSettings", "ClientReaderSettings\ClientReaderSettings.csproj", "{16C5A456-592B-40C6-99F8-9CEFE66292A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0777DB9C-9EA8-4061-951E-9DD7C088784C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0777DB9C-9EA8-4061-951E-9DD7C088784C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0777DB9C-9EA8-4061-951E-9DD7C088784C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16C5A456-592B-40C6-99F8-9CEFE66292A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16C5A456-592B-40C6-99F8-9CEFE66292A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16C5A456-592B-40C6-99F8-9CEFE66292A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16C5A456-592B-40C6-99F8-9CEFE66292A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

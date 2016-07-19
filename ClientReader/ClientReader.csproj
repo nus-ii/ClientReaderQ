@@ -53,6 +53,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClientReaderSettings\ClientReaderSettings.csproj">
+      <Project>{16c5a456-592b-40c6-99f8-9cefe66292a0}</Project>
+      <Name>ClientReaderSettings</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UserReaderLibrary\UserReaderLibrary.csproj">
       <Project>{0777db9c-9ea8-4061-951e-9dd7c088784c}</Project>
       <Name>UserReaderLibrary</Name>

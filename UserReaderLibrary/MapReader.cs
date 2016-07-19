@@ -9,6 +9,11 @@ namespace UserReaderLibrary
 {
 	public class MapReader
 	{
+		/// <summary>
+		/// Метод чтения файла из 
+		/// </summary>
+		/// <param name="rdr"></param>
+		/// <returns></returns>
 		public static List<MapLine> Read(StreamReader rdr)
 		{
 			List<MapLine> result=new List<MapLine>();
