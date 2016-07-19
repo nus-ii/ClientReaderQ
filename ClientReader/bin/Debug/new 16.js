@@ -39,7 +39,7 @@
 					"house" : "3",
 					"flat" : "200",
 					"postalCode" : "",
-					"displayName" : "\u041c\u043e\u0441\u043a\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b, \u0433 \u041c\u044b\u0442\u0438\u0449\u0438, \u043f/\u0441\u0442 \u041c\u044b\u0442\u0438\u0449\u0438 16, \u0434. 3, \u043a\u0432. 200",
+					"displayName" : "Мытищи 3, \u043a\u0432. 200",
 					"settlementWithType" : "\u043f/\u0441\u0442 \u041c\u044b\u0442\u0438\u0449\u0438 16",
 					"block" : "",
 					"ID" : "b5e1ddd4-c10e-4e94-a50b-75aa12dfd0a4"
