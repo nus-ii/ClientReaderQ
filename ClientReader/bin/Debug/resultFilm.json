@@ -1,0 +1,842 @@
+[
+  {
+    "BaseFolder": "0A01",
+    "SubFolder": "I",
+    "Imdbid": "ID 1198196",
+    "Name": "День выборов"
+  },
+  {
+    "BaseFolder": "0A01",
+    "SubFolder": "II",
+    "Imdbid": "ID 0970411",
+    "Name": "Город Эмбер побег"
+  },
+  {
+    "BaseFolder": "0A01",
+    "SubFolder": "III",
+    "Imdbid": "ID 0892769",
+    "Name": "Как приручить дракона"
+  },
+  {
+    "BaseFolder": "0A01",
+    "SubFolder": "IV",
+    "Imdbid": "ID 2202611",
+    "Name": "Топ гир в кино"
+  },
+  {
+    "BaseFolder": "0A01",
+    "SubFolder": "V",
+    "Imdbid": "ID 0371724",
+    "Name": "Автостопом по галактике"
+  },
+  {
+    "BaseFolder": "0A02",
+    "SubFolder": "I",
+    "Imdbid": "ID 0104239",
+    "Name": "\"Папа, умер Дед Мороз\""
+  },
+  {
+    "BaseFolder": "0A02",
+    "SubFolder": "II",
+    "Imdbid": "ID 0114978",
+    "Name": "Деревянная комната"
+  },
+  {
+    "BaseFolder": "0A02",
+    "SubFolder": "III",
+    "Imdbid": "ID 1227165",
+    "Name": "Нирвана "
+  },
+  {
+    "BaseFolder": "0A02",
+    "SubFolder": "IV",
+    "Imdbid": "ID 1371638",
+    "Name": "\"Про Федота-стрельца, удалого молодца\""
+  },
+  {
+    "BaseFolder": "0A02",
+    "SubFolder": "V",
+    "Imdbid": "ID 0079944",
+    "Name": "Сталкер"
+  },
+  {
+    "BaseFolder": "0A03",
+    "SubFolder": "I",
+    "Imdbid": "ID 0070544",
+    "Name": "Дикая планета"
+  },
+  {
+    "BaseFolder": "0A03",
+    "SubFolder": "II",
+    "Imdbid": "ID 2065968",
+    "Name": "Дар ночной фурии"
+  },
+  {
+    "BaseFolder": "0A03",
+    "SubFolder": "III",
+    "Imdbid": "ID 0056352",
+    "Name": "Планета Бурь"
+  },
+  {
+    "BaseFolder": "0A03",
+    "SubFolder": "IV",
+    "Imdbid": "ID 0073486",
+    "Name": "Пролетая над гнездом кукушки"
+  },
+  {
+    "BaseFolder": "0A03",
+    "SubFolder": "V",
+    "Imdbid": "ID 0384537",
+    "Name": "Сайлент Хилл"
+  },
+  {
+    "BaseFolder": "0A03",
+    "SubFolder": "VI",
+    "Imdbid": "ID 0066434",
+    "Name": "THX 1138"
+  },
+  {
+    "BaseFolder": "0A04",
+    "SubFolder": "I",
+    "Imdbid": "ID 0182512",
+    "Name": "Вертикаль"
+  },
+  {
+    "BaseFolder": "0A04",
+    "SubFolder": "II",
+    "Imdbid": "ID 1049413",
+    "Name": "Вверх"
+  },
+  {
+    "BaseFolder": "0A04",
+    "SubFolder": "III",
+    "Imdbid": "ID 0181689",
+    "Name": "Особое мнение"
+  },
+  {
+    "BaseFolder": "0A04",
+    "SubFolder": "IV",
+    "Imdbid": "ID 0078748",
+    "Name": "Чужой"
+  },
+  {
+    "BaseFolder": "0A05",
+    "SubFolder": "I",
+    "Imdbid": "ID 0119174",
+    "Name": "Игра"
+  },
+  {
+    "BaseFolder": "0A05",
+    "SubFolder": "II",
+    "Imdbid": "ID 2271735",
+    "Name": "Тайна перевала Дятлова"
+  },
+  {
+    "BaseFolder": "0A05",
+    "SubFolder": "III",
+    "Imdbid": "ID 1482459",
+    "Name": "Лоракс"
+  },
+  {
+    "BaseFolder": "0A05",
+    "SubFolder": "IV",
+    "Imdbid": "ID 1527186",
+    "Name": "Меланхолия"
+  },
+  {
+    "BaseFolder": "0A05",
+    "SubFolder": "V",
+    "Imdbid": "ID 0120102",
+    "Name": "Семь лет в Тибете"
+  },
+  {
+    "BaseFolder": "0A06",
+    "SubFolder": "I",
+    "Imdbid": "ID 0113606",
+    "Name": "Последняя пуля"
+  },
+  {
+    "BaseFolder": "0A06",
+    "SubFolder": "II",
+    "Imdbid": "ID 0087182",
+    "Name": "Дюна"
+  },
+  {
+    "BaseFolder": "0A06",
+    "SubFolder": "III",
+    "Imdbid": "ID 1991245",
+    "Name": "Запретная зона (2012)"
+  },
+  {
+    "BaseFolder": "0A06",
+    "SubFolder": "IV",
+    "Imdbid": "ID 0762125",
+    "Name": "Планета 51"
+  },
+  {
+    "BaseFolder": "0A07",
+    "SubFolder": "I",
+    "Imdbid": "ID 0066921",
+    "Name": "Заводной апельсин"
+  },
+  {
+    "BaseFolder": "0A07",
+    "SubFolder": "II",
+    "Imdbid": "ID 0075860",
+    "Name": "Близкие контакты третьей степени"
+  },
+  {
+    "BaseFolder": "0A07",
+    "SubFolder": "III",
+    "Imdbid": "ID 0099487",
+    "Name": "Эдвард Руки-ножницы"
+  },
+  {
+    "BaseFolder": "0A07",
+    "SubFolder": "IV",
+    "Imdbid": "ID 2521672",
+    "Name": "Я вам больше не верю"
+  },
+  {
+    "BaseFolder": "0A08",
+    "SubFolder": "I",
+    "Imdbid": "ID 0072684",
+    "Name": "Барри Линдон"
+  },
+  {
+    "BaseFolder": "0A08",
+    "SubFolder": "II",
+    "Imdbid": "ID 0255958",
+    "Name": "Даун Хаус"
+  },
+  {
+    "BaseFolder": "0A09",
+    "SubFolder": "I",
+    "Imdbid": "ID 0120915",
+    "Name": "Звёздные войны. Эпизод I"
+  },
+  {
+    "BaseFolder": "0A09",
+    "SubFolder": "II",
+    "Imdbid": "ID 0121765",
+    "Name": "Звёздные войны. Эпизод II"
+  },
+  {
+    "BaseFolder": "0A09",
+    "SubFolder": "III",
+    "Imdbid": "ID 0121766",
+    "Name": "Звёздные войны. Эпизод III"
+  },
+  {
+    "BaseFolder": "0A09",
+    "SubFolder": "IV",
+    "Imdbid": "ID 0076759",
+    "Name": "Звёздные войны. Эпизод IV"
+  },
+  {
+    "BaseFolder": "0A09",
+    "SubFolder": "V",
+    "Imdbid": "ID 0080684",
+    "Name": "Звёздные войны. Эпизод V"
+  },
+  {
+    "BaseFolder": "0A10",
+    "SubFolder": "I",
+    "Imdbid": "ID 0086190",
+    "Name": "Звёздные войны. Эпизод VI"
+  },
+  {
+    "BaseFolder": "0A10",
+    "SubFolder": "II",
+    "Imdbid": "ID 0386117",
+    "Name": "\"Там, где чудовища живут\""
+  },
+  {
+    "BaseFolder": "0A10",
+    "SubFolder": "III",
+    "Imdbid": "ID 0054215",
+    "Name": "Психо"
+  },
+  {
+    "BaseFolder": "0A10",
+    "SubFolder": "IV",
+    "Imdbid": "ID 0444682",
+    "Name": "Жатва"
+  },
+  {
+    "BaseFolder": "0A10",
+    "SubFolder": "V",
+    "Imdbid": "ID 0117951",
+    "Name": "На игле"
+  },
+  {
+    "BaseFolder": "0A11",
+    "SubFolder": "I",
+    "Imdbid": "ID 0062622",
+    "Name": "Космическая одиссея 2001"
+  },
+  {
+    "BaseFolder": "0A11",
+    "SubFolder": "II",
+    "Imdbid": "ID 0114466",
+    "Name": "Живодёр"
+  },
+  {
+    "BaseFolder": "0A11",
+    "SubFolder": "III",
+    "Imdbid": "ID 0180093",
+    "Name": "Реквием по мечте "
+  },
+  {
+    "BaseFolder": "0A12",
+    "SubFolder": "I",
+    "Imdbid": "ID 0096332",
+    "Name": "Невыносимая лёгкость бытия"
+  },
+  {
+    "BaseFolder": "0A12",
+    "SubFolder": "II",
+    "Imdbid": "ID 0380599",
+    "Name": "Оливер Твист"
+  },
+  {
+    "BaseFolder": "0A12",
+    "SubFolder": "III",
+    "Imdbid": "ID 0097561",
+    "Name": "Игла"
+  },
+  {
+    "BaseFolder": "0A13",
+    "SubFolder": "I",
+    "Imdbid": "ID 1227796",
+    "Name": "Юрьев день"
+  },
+  {
+    "BaseFolder": "0A13",
+    "SubFolder": "II",
+    "Imdbid": "ID 0069293",
+    "Name": "Солярис (Тарковского)"
+  },
+  {
+    "BaseFolder": "0A13",
+    "SubFolder": "III",
+    "Imdbid": "ID 0454841",
+    "Name": "У холмов есть глаза"
+  },
+  {
+    "BaseFolder": "0A13",
+    "SubFolder": "IV",
+    "Imdbid": "ID 0080752",
+    "Name": "Запретная зона (1982)"
+  },
+  {
+    "BaseFolder": "0A14",
+    "SubFolder": "I",
+    "Imdbid": "ID 1588875",
+    "Name": "Как я провёл этим летом"
+  },
+  {
+    "BaseFolder": "0A14",
+    "SubFolder": "II",
+    "Imdbid": "ID 1659337",
+    "Name": "Хорошо быть тихоней"
+  },
+  {
+    "BaseFolder": "0A14",
+    "SubFolder": "III",
+    "Imdbid": "ID 0094226",
+    "Name": "Неприкасаемые "
+  },
+  {
+    "BaseFolder": "0A15",
+    "SubFolder": "I",
+    "Imdbid": "ID 0434409",
+    "Name": "V значит Вендетта"
+  },
+  {
+    "BaseFolder": "0A15",
+    "SubFolder": "II",
+    "Imdbid": "ID 0388473",
+    "Name": "Однажды в Токио"
+  },
+  {
+    "BaseFolder": "0A15",
+    "SubFolder": "III",
+    "Imdbid": "ID 0401383",
+    "Name": "Скафандр и бабочка"
+  },
+  {
+    "BaseFolder": "0A15",
+    "SubFolder": "IV",
+    "Imdbid": "ID 0934870",
+    "Name": "Однажды ночью в одном городе"
+  },
+  {
+    "BaseFolder": "0A15",
+    "SubFolder": "V",
+    "Imdbid": "ID 0083987",
+    "Name": "Ганди"
+  },
+  {
+    "BaseFolder": "0A15",
+    "SubFolder": "VI",
+    "Imdbid": "ID 1753584",
+    "Name": "Сексуальные хроники французской семьи "
+  },
+  {
+    "BaseFolder": "0A16",
+    "SubFolder": "I",
+    "Imdbid": "ID 0032138",
+    "Name": "Волшебник страны Оз (1939)"
+  },
+  {
+    "BaseFolder": "0A16",
+    "SubFolder": "II",
+    "Imdbid": "ID 1380078",
+    "Name": "День рождения Алисы "
+  },
+  {
+    "BaseFolder": "0A16",
+    "SubFolder": "III",
+    "Imdbid": "ID 1188729",
+    "Name": "Пандорум"
+  },
+  {
+    "BaseFolder": "0A17",
+    "SubFolder": "I",
+    "Imdbid": "ID 0831888",
+    "Name": "Железобетон "
+  },
+  {
+    "BaseFolder": "0A17",
+    "SubFolder": "II",
+    "Imdbid": "ID 1379176",
+    "Name": "Девственность"
+  },
+  {
+    "BaseFolder": "0A17",
+    "SubFolder": "III",
+    "Imdbid": "ID 0300140",
+    "Name": "Лиля навсегда "
+  },
+  {
+    "BaseFolder": "0A18",
+    "SubFolder": "I",
+    "Imdbid": "ID 0114367",
+    "Name": "Крикуны"
+  },
+  {
+    "BaseFolder": "0A18",
+    "SubFolder": "II",
+    "Imdbid": "ID 1214983",
+    "Name": "Крикуны: Охота"
+  },
+  {
+    "BaseFolder": "0A18",
+    "SubFolder": "III",
+    "Imdbid": "ID 0820096",
+    "Name": "Изображая жертву "
+  },
+  {
+    "BaseFolder": "0A18",
+    "SubFolder": "IV",
+    "Imdbid": "ID 1020530",
+    "Name": "Райское озеро"
+  },
+  {
+    "BaseFolder": "0A18",
+    "SubFolder": "V",
+    "Imdbid": "ID 0074812",
+    "Name": "Бегство Логана"
+  },
+  {
+    "BaseFolder": "0A18",
+    "SubFolder": "VI",
+    "Imdbid": "ID 1136608",
+    "Name": "Район 9 "
+  },
+  {
+    "BaseFolder": "0A19",
+    "SubFolder": "I",
+    "Imdbid": "ID 1403085",
+    "Name": "Похороните меня за плинтусом "
+  },
+  {
+    "BaseFolder": "0A19",
+    "SubFolder": "II",
+    "Imdbid": "ID 0083866",
+    "Name": "Инопланетянин"
+  },
+  {
+    "BaseFolder": "0A19",
+    "SubFolder": "III",
+    "Imdbid": "ID 1483013",
+    "Name": "Обливион"
+  },
+  {
+    "BaseFolder": "0A19",
+    "SubFolder": "IV",
+    "Imdbid": "ID 0464141",
+    "Name": "Приют"
+  },
+  {
+    "BaseFolder": "0A20",
+    "SubFolder": "I",
+    "Imdbid": "ID 0093058",
+    "Name": "Цельнометаллическая оболочка"
+  },
+  {
+    "BaseFolder": "0A20",
+    "SubFolder": "II",
+    "Imdbid": "ID 0457430",
+    "Name": "Лабиринт Фавна"
+  },
+  {
+    "BaseFolder": "0A20",
+    "SubFolder": "III",
+    "Imdbid": "ID 0337692",
+    "Name": "На дороге"
+  },
+  {
+    "BaseFolder": "0A21",
+    "SubFolder": "I",
+    "Imdbid": "ID 0084315",
+    "Name": "Властелины времени "
+  },
+  {
+    "BaseFolder": "0A21",
+    "SubFolder": "II",
+    "Imdbid": "ID 2332684",
+    "Name": "\"Зима, уходи!\""
+  },
+  {
+    "BaseFolder": "0A21",
+    "SubFolder": "III",
+    "Imdbid": "ID 1250777",
+    "Name": "Пипец "
+  },
+  {
+    "BaseFolder": "0A22",
+    "SubFolder": "I",
+    "Imdbid": "ID 0319061",
+    "Name": "Большая Рыба"
+  },
+  {
+    "BaseFolder": "0A22",
+    "SubFolder": "II",
+    "Imdbid": "ID 0023969",
+    "Name": "Утиный суп"
+  },
+  {
+    "BaseFolder": "0A23",
+    "SubFolder": "I",
+    "Imdbid": "ID 0036613",
+    "Name": "Мышяк и старые кружева"
+  },
+  {
+    "BaseFolder": "0A23",
+    "SubFolder": "II",
+    "Imdbid": "ID 0095953",
+    "Name": "Человек дождя"
+  },
+  {
+    "BaseFolder": "0A24",
+    "SubFolder": "I",
+    "Imdbid": "ID 0093779",
+    "Name": "Принцесса-невеста"
+  },
+  {
+    "BaseFolder": "0A24",
+    "SubFolder": "II",
+    "Imdbid": "ID 0462538",
+    "Name": "Симпсоны в кино"
+  },
+  {
+    "BaseFolder": "0A24",
+    "SubFolder": "III",
+    "Imdbid": "ID 0363163",
+    "Name": "Бункер"
+  },
+  {
+    "BaseFolder": "0A25",
+    "SubFolder": "I",
+    "Imdbid": "ID 0041546",
+    "Name": "Добрые сердца и короны"
+  },
+  {
+    "BaseFolder": "0A25",
+    "SubFolder": "II",
+    "Imdbid": "ID 0102511",
+    "Name": "Голый завтрак (обед нагишом)"
+  },
+  {
+    "BaseFolder": "0A25",
+    "SubFolder": "III",
+    "Imdbid": "ID 0047528",
+    "Name": "Дорога"
+  },
+  {
+    "BaseFolder": "0A25",
+    "SubFolder": "IV",
+    "Imdbid": "ID 0780536",
+    "Name": "Залечь на дно в Брюгге"
+  },
+  {
+    "BaseFolder": "0A26",
+    "SubFolder": "I",
+    "Imdbid": "ID 0086541",
+    "Name": "Видеодром"
+  },
+  {
+    "BaseFolder": "0A26",
+    "SubFolder": "II",
+    "Imdbid": "ID 0328832",
+    "Name": "Аниматрица"
+  },
+  {
+    "BaseFolder": "0A27",
+    "SubFolder": "I",
+    "Imdbid": "ID 0267287",
+    "Name": "Авалон"
+  },
+  {
+    "BaseFolder": "0A27",
+    "SubFolder": "II",
+    "Imdbid": "ID 0047650",
+    "Name": "Верные друзья"
+  },
+  {
+    "BaseFolder": "0A27",
+    "SubFolder": "III",
+    "Imdbid": "",
+    "Name": "Телепередача о фильме Верные Друзья"
+  },
+  {
+    "BaseFolder": "0A27",
+    "SubFolder": "IV",
+    "Imdbid": "ID 0119794",
+    "Name": "\"Нирвана (фильм 1997)\""
+  },
+  {
+    "BaseFolder": "0A28",
+    "SubFolder": "I",
+    "Imdbid": "ID 0105236",
+    "Name": "Бешеные псы"
+  },
+  {
+    "BaseFolder": "0A28",
+    "SubFolder": "II",
+    "Imdbid": "ID 0211915",
+    "Name": "Амели"
+  },
+  {
+    "BaseFolder": "0A28",
+    "SubFolder": "III",
+    "Imdbid": "ID 0040522",
+    "Name": "Похитители велосипедов"
+  },
+  {
+    "BaseFolder": "0A29",
+    "SubFolder": "I",
+    "Imdbid": "ID 0338013",
+    "Name": "Вечное сияние чистого разума"
+  },
+  {
+    "BaseFolder": "0A29",
+    "SubFolder": "II",
+    "Imdbid": "ID 0053291",
+    "Name": "В джазе только девушки"
+  },
+  {
+    "BaseFolder": "0A29",
+    "SubFolder": "III",
+    "Imdbid": "ID 0120689",
+    "Name": "Зелёная миля"
+  },
+  {
+    "BaseFolder": "0A30",
+    "SubFolder": "I",
+    "Imdbid": "ID 0050212",
+    "Name": "Мост через реку Квай"
+  },
+  {
+    "BaseFolder": "0A30",
+    "SubFolder": "II",
+    "Imdbid": "ID 0116282",
+    "Name": "Фарго "
+  },
+  {
+    "BaseFolder": "0A31",
+    "SubFolder": "I",
+    "Imdbid": "ID 0031381",
+    "Name": "Унесённые ветром "
+  },
+  {
+    "BaseFolder": "0A31",
+    "SubFolder": "II",
+    "Imdbid": "ID 0114852",
+    "Name": "Деревня проклятых"
+  },
+  {
+    "BaseFolder": "0A31",
+    "SubFolder": "III",
+    "Imdbid": "ID 0118694",
+    "Name": "Любовное настроение"
+  },
+  {
+    "BaseFolder": "0A32",
+    "SubFolder": "I",
+    "Imdbid": "ID 0108160",
+    "Name": "Неспящие в Сиэтле"
+  },
+  {
+    "BaseFolder": "0A32",
+    "SubFolder": "II",
+    "Imdbid": "ID 0046534",
+    "Name": "Война миров"
+  },
+  {
+    "BaseFolder": "0A33",
+    "SubFolder": "I",
+    "Imdbid": "ID 0116209",
+    "Name": "Английский пациент"
+  },
+  {
+    "BaseFolder": "0A33",
+    "SubFolder": "II",
+    "Imdbid": "ID 0070707",
+    "Name": "Спящий"
+  },
+  {
+    "BaseFolder": "0A34",
+    "SubFolder": "I",
+    "Imdbid": "ID 0120338",
+    "Name": "Титаник"
+  },
+  {
+    "BaseFolder": "0A34",
+    "SubFolder": "II",
+    "Imdbid": "ID 0029162",
+    "Name": "Потерянный горизонт"
+  },
+  {
+    "BaseFolder": "0A35",
+    "SubFolder": "I",
+    "Imdbid": "ID 0063442",
+    "Name": "Планета обезьян"
+  },
+  {
+    "BaseFolder": "0A35",
+    "SubFolder": "II",
+    "Imdbid": "ID 0098635",
+    "Name": "Когда Гарри встретил Салли"
+  },
+  {
+    "BaseFolder": "0A36",
+    "SubFolder": "I",
+    "Imdbid": "ID 0043456",
+    "Name": "День когда земля остановилась"
+  },
+  {
+    "BaseFolder": "0A36",
+    "SubFolder": "II",
+    "Imdbid": "ID 0069945",
+    "Name": "Тёмная звезда"
+  },
+  {
+    "BaseFolder": "0A37",
+    "SubFolder": "I",
+    "Imdbid": "ID 0057012",
+    "Name": "\"Доктор Стрейнджлав, или Как я научился не волноваться и полюбил атомную бомбу \""
+  },
+  {
+    "BaseFolder": "0A37",
+    "SubFolder": "II",
+    "Imdbid": "ID 0067756",
+    "Name": "Молчаливое бегство"
+  },
+  {
+    "BaseFolder": "0A38",
+    "SubFolder": "I",
+    "Imdbid": "ID 0057197",
+    "Name": "Язон и аргонавты"
+  },
+  {
+    "BaseFolder": "0A38",
+    "SubFolder": "II",
+    "Imdbid": "ID 0022913",
+    "Name": "Уродцы"
+  },
+  {
+    "BaseFolder": "0A39",
+    "SubFolder": "I",
+    "Imdbid": "ID 0063350",
+    "Name": "Ночь живых мертвецов"
+  },
+  {
+    "BaseFolder": "0A39",
+    "SubFolder": "II",
+    "Imdbid": "ID 0037635",
+    "Name": "Глубокой ночью"
+  },
+  {
+    "BaseFolder": "0A39",
+    "SubFolder": "III",
+    "Imdbid": "ID 0057129",
+    "Name": "Логово Дьявола"
+  },
+  {
+    "BaseFolder": "0A40",
+    "SubFolder": "I",
+    "Imdbid": "ID 0435625",
+    "Name": "Спуск"
+  },
+  {
+    "BaseFolder": "0A40",
+    "SubFolder": "II",
+    "Imdbid": "ID 1273678",
+    "Name": "Шпион по соседству"
+  },
+  {
+    "BaseFolder": "0A40",
+    "SubFolder": "III",
+    "Imdbid": "",
+    "Name": "Пресс"
+  },
+  {
+    "BaseFolder": "0A40",
+    "SubFolder": "IV",
+    "Imdbid": "",
+    "Name": "Солнце"
+  },
+  {
+    "BaseFolder": "0A41",
+    "SubFolder": "I",
+    "Imdbid": "ID 0206634",
+    "Name": "Дитя человеческое"
+  },
+  {
+    "BaseFolder": "0A41",
+    "SubFolder": "II",
+    "Imdbid": "ID 0046912",
+    "Name": "В случае убийства набирайте 'М'"
+  },
+  {
+    "BaseFolder": "0A41",
+    "SubFolder": "III",
+    "Imdbid": "ID 0053198",
+    "Name": "Четыреста ударов"
+  },
+  {
+    "BaseFolder": "0A42",
+    "SubFolder": "I",
+    "Imdbid": "ID 0069281",
+    "Name": "Игра навылет"
+  },
+  {
+    "BaseFolder": "0A42",
+    "SubFolder": "II",
+    "Imdbid": "ID 0075148",
+    "Name": "Роки"
+  }
+]

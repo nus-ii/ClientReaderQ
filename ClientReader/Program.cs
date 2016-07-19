@@ -16,14 +16,15 @@ namespace ClientReader
 	{
 		static void Main(string[] args)
 		{
-			//Привет парень, это правки с рабочего от 05.07.16
-			var ss = File.ReadAllText("Settings.json");
+			//Привет парень, это правки с рабочего от 19.07.16
+			var ss = File.ReadAllText("SettingsFilm.json");
 			var settings = JsonConvert.DeserializeObject<Settings>(ss);
 
 			var baseMap = MapReader.Read(StreamFile(settings.BaseMapPath));
 			string filePathData =settings.DataPath;
 			string selectorPath = settings.SpecialMap.SelectorPath;
-			Dictionary<string, List<MapLine>> dictionaryFromSettings = ReadDict(settings);
+			Dictionary<string, List<MapLine>> dictionaryFromSettings = new Dictionary<string, List<MapLine>>();
+			dictionaryFromSettings=ReadDict(settings);
 
 			var bigResult = DataProcessor.Process(StreamFile(filePathData), baseMap, selectorPath, dictionaryFromSettings);
 
@@ -60,9 +61,13 @@ namespace ClientReader
 		private static Dictionary<string, List<MapLine>> ReadDict(Settings set)
 		{
 			Dictionary<string, List<MapLine>> result=new Dictionary<string, List<MapLine>>();
-			foreach (var sm in set.SpecialMap.Maps)
+
+			if (set.SpecialMap.Maps.Count>0)
 			{
-				result.Add(sm.SelectorValue, MapReader.Read(StreamFile(sm.Path)));
+				foreach (var sm in set.SpecialMap.Maps)
+				{
+					result.Add(sm.SelectorValue, MapReader.Read(StreamFile(sm.Path)));
+				} 
 			}
 			return result;
 		}

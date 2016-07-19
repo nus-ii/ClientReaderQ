@@ -1,0 +1,4 @@
+BaseFolder;0;string;false;BaseFolder;
+SubFolder;1;string;true;SubFolder;
+Imdbid;2;string;true;Imdbid;
+Name;3;string;true;Name;

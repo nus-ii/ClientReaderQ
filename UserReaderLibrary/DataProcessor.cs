@@ -172,9 +172,17 @@ namespace UserReaderLibrary
 				//Разбор по базовой карте
 				var temp = ProcessLine(line, mainMap);
 
-				//Разбор по дополнительным картам
-				var tempB = MegaProcessLine(line, ref temp, selectorPath, selectorDictionary);
-				resultList.Add(tempB);
+				if (selectorDictionary.Count > 0)
+				{
+					//Разбор по дополнительным картам
+					var tempB = MegaProcessLine(line, ref temp, selectorPath, selectorDictionary);
+					resultList.Add(tempB);
+				}
+				else
+				{
+					resultList.Add(temp);
+				}
+
 				line = rdr.ReadLine();
 			}
 			return resultList;
