@@ -14,11 +14,31 @@ namespace ClientReader
 {
 	class Program
 	{
+		//Привет парень, это правки с рабочего от 22.07.16
+
 		static void Main(string[] args)
 		{
-			//Привет парень, это правки с рабочего от 19.07.16
-			var ss = File.ReadAllText("SettingsFilm.json");
-			var settings = JsonConvert.DeserializeObject<Settings>(ss);
+			string ss = "";
+			Settings settings;
+			if (args!=null&&args.Length>=1&&!string.IsNullOrEmpty(args[0]))
+			{
+				try
+				{
+					string filedata = File.ReadAllText(args[0]);
+					settings = JsonConvert.DeserializeObject<Settings>(filedata);
+				}
+				catch
+				{
+					settings = SetSettings(string.Format("Не удалось получить настройки из файла {0}. Введите путь к файлу настроек.",args[0]));
+				}
+			}
+			else
+			{
+				settings=SetSettings("Введите путь к файлу настроек.");
+			}
+			
+			
+			
 
 			var baseMap = MapReader.Read(StreamFile(settings.BaseMapPath));
 			string filePathData =settings.DataPath;
@@ -37,6 +57,25 @@ namespace ClientReader
 			
 			Console.ReadLine();
 		}
+
+		private static Settings SetSettings(string message)
+		{
+			Settings result=new Settings();
+			string path = "";
+
+			try
+			{
+				Console.WriteLine(message);
+				path = Console.ReadLine();
+				string filedata = File.ReadAllText(path);
+				result = JsonConvert.DeserializeObject<Settings>(filedata);
+				return result;
+			}
+			catch (Exception)
+			{
+				return SetSettings(string.Format("Не удалось получить настройки из файла {0}. Введите путь к файлу настроек.", path));
+			}
+	}
 
 		private static bool ResultSave(List<JObject> bigResult, Save saveSettings)
 		{
