@@ -14,7 +14,7 @@ namespace ClientReader
 {
 	class Program
 	{
-		//Привет парень, это правки с рабочего от 22.07.16
+		//Привет парень, это правки с рабочего от 31.07.16
 
 		static void Main(string[] args)
 		{
@@ -37,8 +37,6 @@ namespace ClientReader
 				settings=SetSettings("Введите путь к файлу настроек.");
 			}
 			
-			
-			
 
 			var baseMap = MapReader.Read(StreamFile(settings.BaseMapPath));
 			string filePathData =settings.DataPath;
@@ -46,13 +44,26 @@ namespace ClientReader
 			Dictionary<string, List<MapLine>> dictionaryFromSettings = new Dictionary<string, List<MapLine>>();
 			dictionaryFromSettings=ReadDict(settings);
 
-			var bigResult = DataProcessor.Process(StreamFile(filePathData), baseMap, selectorPath, dictionaryFromSettings);
+			List<string> errorList=new List<string>();
+			List<string> badLineList=new List<string>();
+
+			var bigResult = DataProcessor.Process(StreamFile(filePathData), baseMap, selectorPath, dictionaryFromSettings,ref errorList,ref badLineList);
 
 			bool success = ResultSave(bigResult, settings.SaveSettings);
 
 			foreach (var jo in bigResult)
 			{
 				Console.WriteLine(jo.ToString());
+			}
+
+			foreach (var l in badLineList)
+			{
+				Console.WriteLine(l);
+			}
+
+			foreach (var l in errorList)
+			{
+				Console.WriteLine(l);
 			}
 			
 			Console.ReadLine();

@@ -607,12 +607,6 @@
   },
   {
     "BaseFolder": "0A27",
-    "SubFolder": "III",
-    "Imdbid": "",
-    "Name": "Телепередача о фильме Верные Друзья"
-  },
-  {
-    "BaseFolder": "0A27",
     "SubFolder": "IV",
     "Imdbid": "ID 0119794",
     "Name": "\"Нирвана (фильм 1997)\""
@@ -796,18 +790,6 @@
     "SubFolder": "II",
     "Imdbid": "ID 1273678",
     "Name": "Шпион по соседству"
-  },
-  {
-    "BaseFolder": "0A40",
-    "SubFolder": "III",
-    "Imdbid": "",
-    "Name": "Пресс"
-  },
-  {
-    "BaseFolder": "0A40",
-    "SubFolder": "IV",
-    "Imdbid": "",
-    "Name": "Солнце"
   },
   {
     "BaseFolder": "0A41",

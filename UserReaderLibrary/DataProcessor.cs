@@ -17,20 +17,34 @@ namespace UserReaderLibrary
 		/// </summary>
 		/// <param name="line">Исходная строка</param>
 		/// <param name="map">Карта</param>
+		/// <param name="success">Признак успешности обработки строки</param>
 		/// <param name="target">Целевой объект</param>
+		/// <param name="message">Сообщение об ошибке</param>
 		/// <returns></returns>
-		public static JObject ProcessLine(string line, List<MapLine> map,JObject target=null)
+		public static JObject ProcessLine(string line, List<MapLine> map,ref string message,ref bool success,JObject target=null)
 		{
 			if (target == null)
 			{
 				target=new JObject();
 			}
-
-			var cols = line.Split(';');
-
-			foreach (var mapLine in map)
+			try
 			{
-				AddValue(ref target,cols,mapLine);
+
+				var cols = line.Split(';');
+
+				foreach (var mapLine in map)
+				{
+					if (!AddValue(ref target, cols, mapLine, ref message))
+					{
+						success = false;
+						break;
+					}
+				}
+			}
+			catch (Exception e)
+			{
+				message=e.Message;
+				success = false;
 			}
 
 			return target;
@@ -42,24 +56,47 @@ namespace UserReaderLibrary
 		/// <param name="target">Целевой объект</param>
 		/// <param name="data">Массив соответствующий входной строке данных</param>
 		/// <param name="mapLine">Строка карты</param>
-		public static void AddValue(ref JObject target, string[] data, MapLine mapLine)
+		/// <param name="s"></param>
+		public static bool AddValue(ref JObject target, string[] data, MapLine mapLine, ref string message)
 		{
-			switch (mapLine.TypeValue)
+
+			string fullline = "";
+			for (int q = 0; q < data.Length; q++)
 			{
-                //TODO: Точка врезки новых типов
-				case "int":
-					CreateToken<int>(mapLine.Path.Split('.'), ref target, Convert.ToInt32(data[mapLine.PositionInt]));
-					break;
-				case "decimal":
-					CreateToken<decimal>(mapLine.Path.Split('.'), ref target, Convert.ToDecimal(data[mapLine.PositionInt]));
-					break;
-				case "date":
-					CreateToken<DateTime>(mapLine.Path.Split('.'), ref target, DateTime.Parse(data[mapLine.PositionInt]));
-					break;
-				default:
-					CreateToken<string>(mapLine.Path.Split('.'), ref target, data[mapLine.PositionInt]);
-					break;
+				fullline = fullline + data[q] + ";";
 			}
+
+			if (mapLine.RqValue && (string.IsNullOrEmpty(data[mapLine.PositionInt]) || string.IsNullOrWhiteSpace(data[mapLine.PositionInt])))
+			{
+				message=string.Format("Отсутствуют данные в столбце {0} для заполнения поля {1}, строка {2}",mapLine.Position,mapLine.Path,fullline);
+				return false;
+			}
+
+			try
+			{
+				switch (mapLine.TypeValue)
+				{
+					//TODO: Точка врезки новых типов
+					case "int":
+						CreateToken<int>(mapLine.Path.Split('.'), ref target, Convert.ToInt32(data[mapLine.PositionInt]));
+						break;
+					case "decimal":
+						CreateToken<decimal>(mapLine.Path.Split('.'), ref target, Convert.ToDecimal(data[mapLine.PositionInt]));
+						break;
+					case "date":
+						CreateToken<DateTime>(mapLine.Path.Split('.'), ref target, DateTime.Parse(data[mapLine.PositionInt]));
+						break;
+					default:
+						CreateToken<string>(mapLine.Path.Split('.'), ref target, data[mapLine.PositionInt]);
+						break;
+				}
+			}
+			catch (Exception e)
+			{
+				message = string.Format("Проблема с данными в столбце {0} для заполнения поля {1} требуемый формат {3}, строка {2}. Дополнительные данные: {4}", mapLine.Position, mapLine.Path, fullline, mapLine.TypeValue,e.Message);
+				return false;
+			}
+			return true;
 		}
 
 		private static JObject CreateToken<TData>(string[] tree, ref JObject target, TData value)
@@ -123,15 +160,17 @@ namespace UserReaderLibrary
 		/// <param name="target">Целевой объект</param>
 		/// <param name="selectorPath">Путь к признаку</param>
 		/// <param name="selectorDictionary">Пакет карт</param>
+		/// <param name="success">Признак успешности</param>
+		/// <param name="message">Сообщение об ошибке</param>
 		/// <returns></returns>
-		private static JObject MegaProcessLine(string line, ref JObject target, string selectorPath, Dictionary<string, List<MapLine>> selectorDictionary)
+		private static JObject MegaProcessLine(string line, ref JObject target, string selectorPath, Dictionary<string, List<MapLine>> selectorDictionary,ref bool success,ref string message)
 		{
 
 			foreach (var selectorP in selectorDictionary)
 			{
 				if (selectorP.Key.Equals(target[selectorPath].Value<string>(), StringComparison.Ordinal))
 				{
-					return ProcessLine(line, selectorP.Value, target);
+					return ProcessLine(line, selectorP.Value,ref message,ref success,target);
 				}
 			}
 			throw new ArgumentException("Нет нужной таблицы");
@@ -161,25 +200,43 @@ namespace UserReaderLibrary
 		/// <param name="mainMap">Базовая схема разбора</param>
 		/// <param name="selectorPath">Путь к признаку типа объекта</param>
 		/// <param name="selectorDictionary">Словарь Значение признака-соответсвующая карта</param>
+		/// <param name="errorLog"></param>
+		/// <param name="badLines"></param>
 		/// <returns></returns>
 		public static List<JObject> Process(StreamReader rdr, List<MapLine> mainMap, string selectorPath,
-			Dictionary<string, List<MapLine>> selectorDictionary)
+			Dictionary<string, List<MapLine>> selectorDictionary,ref List<string> errorLog, ref List<string> badLines)
 		{
 			List<JObject> resultList = new List<JObject>();
 			var line = rdr.ReadLine();
 			while (line != null)
 			{
+				string message = "";
+				bool success = true;
 				//Разбор по базовой карте
-				var temp = ProcessLine(line, mainMap);
+				var temp = ProcessLine(line, mainMap,ref message,ref success);
+				if (!success)
+				{
+					errorLog.Add(message);
+					badLines.Add(line);
+				}
 
-				if (selectorDictionary.Count > 0)
+				if (success&&selectorDictionary.Count > 0)
 				{
 					//Разбор по дополнительным картам
-					var tempB = MegaProcessLine(line, ref temp, selectorPath, selectorDictionary);
+					var tempB = MegaProcessLine(line, ref temp, selectorPath, selectorDictionary,ref success,ref message);
+
+					if (!success)
+					{
+						errorLog.Add(message);
+						badLines.Add(line);
+					}
+
+					if(success)
 					resultList.Add(tempB);
 				}
 				else
 				{
+					if(success)
 					resultList.Add(temp);
 				}
 
