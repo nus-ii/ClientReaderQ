@@ -50,23 +50,35 @@ namespace ClientReader
 			var bigResult = DataProcessor.Process(StreamFile(filePathData), baseMap, selectorPath, dictionaryFromSettings,ref errorList,ref badLineList);
 
 			bool success = ResultSave(bigResult, settings.SaveSettings);
-
-			foreach (var jo in bigResult)
+			foreach (var l in bigResult)
 			{
-				Console.WriteLine(jo.ToString());
+				Console.WriteLine(l.ToString());
 			}
 
+			SaveList(badLineList,".csv","badLines",settings.SaveSettings);
 			foreach (var l in badLineList)
 			{
 				Console.WriteLine(l);
 			}
 
+			SaveList(errorList, ".txt", "errorList",settings.SaveSettings);
 			foreach (var l in errorList)
 			{
 				Console.WriteLine(l);
 			}
 			
 			Console.ReadLine();
+		}
+
+		private static void SaveList(List<string> targetList, string ext, string dopname, Save saveSettings)
+		{
+			string result = "";
+			foreach (var l in targetList)
+			{
+				result = result + l + "\r\n";
+			}
+
+			File.WriteAllText(string.Format("{0}-{1}{2}",saveSettings.GetFileNameWithoutExt(),dopname,ext),result);
 		}
 
 		private static Settings SetSettings(string message)

@@ -37,5 +37,10 @@ namespace ClientReaderSettings
 		{
 			return FileFolder + FileName + FileExt;
 		}
+
+		public string GetFileNameWithoutExt()
+		{
+			return FileFolder + FileName;
+		}
 	}
 }
