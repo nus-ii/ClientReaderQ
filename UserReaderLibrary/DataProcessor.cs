@@ -29,7 +29,6 @@ namespace UserReaderLibrary
 			}
 			try
 			{
-
 				var cols = line.Split(';');
 
 				foreach (var mapLine in map)
@@ -168,7 +167,7 @@ namespace UserReaderLibrary
 
 			foreach (var selectorP in selectorDictionary)
 			{
-				if (selectorP.Key.Equals(target[selectorPath].Value<string>(), StringComparison.Ordinal))
+				if (selectorP.Key.Equals(target[selectorPath].Value<string>(), StringComparison.InvariantCulture))
 				{
 					return ProcessLine(line, selectorP.Value,ref message,ref success,target);
 				}
