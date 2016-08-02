@@ -2,9 +2,9 @@
 	"BaseMapPath" : "C://ClientImport//BaseMap.csv",
 	"DataPath" : "C://ClientImport//data.csv",
 	"SpecialMap" : {
-		"SelectorPath" : "ClientType",
+		"SelectorPath" : "ContragentType",
 		"Maps" : [{
-				"SelectorValue" : "FL",
+				"SelectorValue" : "Физическое лицо",
 				"Path" : "C://ClientImport//MapFL.csv"
 			}, {
 				"SelectorValue" : "Юридическое лицо",

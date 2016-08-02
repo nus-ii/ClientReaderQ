@@ -111,7 +111,11 @@ namespace ClientReader
 					result.Add(jo);
 				}
 
-				File.WriteAllText(saveSettings.GetFileFullName(),result.ToString());
+				JObject gigaResult=new JObject();
+				gigaResult["result"] = result;
+
+
+				File.WriteAllText(saveSettings.GetFileFullName(),gigaResult.ToString());
 			}
 			else
 			{
