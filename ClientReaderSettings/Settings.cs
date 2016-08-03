@@ -13,6 +13,7 @@ namespace ClientReaderSettings
 		public string DataPath;
 		public SpecMap SpecialMap;
 		public Save SaveSettings;
+		public int FirstValueLineExcelLike;
 	}
 
 

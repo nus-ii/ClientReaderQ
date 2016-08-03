@@ -11,3 +11,5 @@ C:\Projects\ClientReaderQ\UserReaderLibrary\bin\Debug\UserReaderLibrary.pdb
 C:\Projects\ClientReaderQ\UserReaderLibrary\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\ClientReaderQ\UserReaderLibrary\bin\Debug\Newtonsoft.Json.xml
 C:\Projects\ClientReaderQ\UserReaderLibrary\obj\Debug\UserReaderLibrary.csprojResolveAssemblyReference.cache
+C:\Projects\ClientReaderQ\UserReaderLibrary\bin\Debug\ClientReaderSettings.dll
+C:\Projects\ClientReaderQ\UserReaderLibrary\bin\Debug\ClientReaderSettings.pdb

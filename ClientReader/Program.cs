@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Mime;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +15,10 @@ namespace ClientReader
 {
 	class Program
 	{
-		//Привет парень, это правки с рабочего от 31.07.16
-
+		//Привет парень, это правки с рабочего от 03.08.16
 		static void Main(string[] args)
 		{
+			Console.WriteLine();
 			string ss = "";
 			Settings settings;
 			if (args!=null&&args.Length>=1&&!string.IsNullOrEmpty(args[0]))
@@ -47,7 +48,8 @@ namespace ClientReader
 			List<string> errorList=new List<string>();
 			List<string> badLineList=new List<string>();
 
-			var bigResult = DataProcessor.Process(StreamFile(filePathData), baseMap, selectorPath, dictionaryFromSettings,ref errorList,ref badLineList);
+			var Stream = new StreamReader(filePathData, Encoding.GetEncoding("windows-1251"));
+			var bigResult = DataProcessor.Process(Stream, baseMap, selectorPath, dictionaryFromSettings,settings,ref errorList,ref badLineList);
 
 			bool success = ResultSave(bigResult, settings.SaveSettings);
 			foreach (var l in bigResult)

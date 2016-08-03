@@ -1,0 +1,22 @@
+{
+	"BaseMapPath" : "BaseMap.csv",
+	"DataPath" : "Data.csv",
+	"SpecialMap" : {
+		"SelectorPath" : "ClientType",
+		"Maps" : [{
+				"SelectorValue" : "FL",
+				"Path" : "MapFL.csv"
+			}, {
+				"SelectorValue" : "UL",
+				"Path" : "MapUL.csv"
+			}
+		]
+	},
+	"SaveSettings" : {
+		"OneFile" : true,
+		"MaxItemInFile" : 10,
+		"FileName" : "result",
+		"FileFolder" : "",
+		"FileExt" : ".json"
+	}
+}

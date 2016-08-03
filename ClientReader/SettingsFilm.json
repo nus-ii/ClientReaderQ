@@ -1,0 +1,16 @@
+{
+	"BaseMapPath" : "BaseMapFilm.csv",
+	"DataPath" : "DataFilm.csv",
+	"SpecialMap" : {
+		"SelectorPath" : "",
+		"Maps" : [
+		]
+	},
+	"SaveSettings" : {
+		"OneFile" : true,
+		"MaxItemInFile" : 10,
+		"FileName" : "resultFilm",
+		"FileFolder" : "",
+		"FileExt" : ".json"
+	}
+}

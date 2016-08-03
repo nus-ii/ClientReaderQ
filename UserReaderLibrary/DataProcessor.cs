@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ClientReaderSettings;
+
 
 namespace UserReaderLibrary
 {
@@ -199,46 +201,52 @@ namespace UserReaderLibrary
 		/// <param name="mainMap">Базовая схема разбора</param>
 		/// <param name="selectorPath">Путь к признаку типа объекта</param>
 		/// <param name="selectorDictionary">Словарь Значение признака-соответсвующая карта</param>
+		/// <param name="settings"></param>
 		/// <param name="errorLog"></param>
 		/// <param name="badLines"></param>
 		/// <returns></returns>
-		public static List<JObject> Process(StreamReader rdr, List<MapLine> mainMap, string selectorPath,
-			Dictionary<string, List<MapLine>> selectorDictionary,ref List<string> errorLog, ref List<string> badLines)
+		public static List<JObject> Process(StreamReader rdr, List<MapLine> mainMap, string selectorPath, Dictionary<string, List<MapLine>> selectorDictionary, 
+			Settings settings, ref List<string> errorLog, ref List<string> badLines)
 		{
 			List<JObject> resultList = new List<JObject>();
 			var line = rdr.ReadLine();
+			int lineCount = 0;
 			while (line != null)
 			{
+				lineCount++;
 				string message = "";
 				bool success = true;
-				//Разбор по базовой карте
-				var temp = ProcessLine(line, mainMap,ref message,ref success);
-				if (!success)
+				if (lineCount>=settings.FirstValueLineExcelLike)
 				{
-					errorLog.Add(message);
-					badLines.Add(line);
-				}
-
-				if (success&&selectorDictionary.Count > 0)
-				{
-					//Разбор по дополнительным картам
-					var tempB = MegaProcessLine(line, ref temp, selectorPath, selectorDictionary,ref success,ref message);
-
+					//Разбор по базовой карте
+					var temp = ProcessLine(line, mainMap, ref message, ref success);
 					if (!success)
 					{
 						errorLog.Add(message);
 						badLines.Add(line);
 					}
 
-					if(success)
-					resultList.Add(tempB);
-				}
-				else
-				{
-					if(success)
-					resultList.Add(temp);
-				}
+					if (success && selectorDictionary.Count > 0)
+					{
+						//Разбор по дополнительным картам
+						var tempB = MegaProcessLine(line, ref temp, selectorPath, selectorDictionary, ref success, ref message);
 
+						if (!success)
+						{
+							errorLog.Add(message);
+							badLines.Add(line);
+						}
+
+						if (success)
+							resultList.Add(tempB);
+					}
+					else
+					{
+						if (success)
+							resultList.Add(temp);
+					}
+					
+				}
 				line = rdr.ReadLine();
 			}
 			return resultList;

@@ -51,6 +51,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Settings.json" />
+    <None Include="SettingsFilm.json" />
+    <None Include="SettingsUser.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClientReaderSettings\ClientReaderSettings.csproj">
