@@ -24,3 +24,5 @@ C:\Projects\ClientReaderQ\ClientReader\bin\Debug\Newtonsoft.Json.xml
 C:\Projects\ClientReaderQ\ClientReader\obj\Debug\ClientReader.exe
 C:\Projects\ClientReaderQ\ClientReader\obj\Debug\ClientReader.pdb
 C:\Projects\ClientReaderQ\ClientReader\bin\Debug\SettingsUser.json
+C:\Projects\ClientReaderQ\ClientReader\bin\Debug\Settings.json
+C:\Projects\ClientReaderQ\ClientReader\bin\Debug\SettingsFilm.json

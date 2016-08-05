@@ -1,7 +1,8 @@
 {
 	"BaseMapPath" : "C://ClientImport//BaseMap.csv",
-	"DataPath" : "C://ClientImport//data3.csv",
+	"DataPath" : "C://ClientImport//data4.csv",
 	"FirstValueLineExcelLike":4,
+	"Encoding":"windows-1251",
 	"SpecialMap" : {
 		"SelectorPath" : "ContragentType",
 		"Maps" : [{
@@ -9,7 +10,7 @@
 				"Path" : "C://ClientImport//MapFL.csv"
 			}, {
 				"SelectorValue" : "Юридическое лицо",
-				"Path" : "MapUL.csv"
+				"Path" : "C://ClientImport//MapUL.csv"
 			}
 		]
 	},

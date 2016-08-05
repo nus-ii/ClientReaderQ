@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Configuration;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -87,6 +88,9 @@ namespace UserReaderLibrary
 					case "date":
 						CreateToken<DateTime>(mapLine.Path.Split('.'), ref target, DateTime.Parse(data[mapLine.PositionInt]));
 						break;
+					case "bool":
+						CreateToken<bool>(mapLine.Path.Split('.'), ref target, BoolAnalise(data[mapLine.PositionInt]));
+						break;
 					default:
 						CreateToken<string>(mapLine.Path.Split('.'), ref target, data[mapLine.PositionInt]);
 						break;
@@ -98,6 +102,26 @@ namespace UserReaderLibrary
 				return false;
 			}
 			return true;
+		}
+
+		private static bool BoolAnalise(string target)
+		{
+			if (string.IsNullOrWhiteSpace(target))
+				return false;
+
+			string s = target.ToUpperInvariant().Trim();
+			string yesR = "Да".ToUpperInvariant();
+			string noR =  "Нет".ToUpperInvariant();
+			string yesE = "true".ToUpperInvariant();
+			string noE = "false".ToUpperInvariant();
+
+			if (string.Equals(s, yesR) || string.Equals(s, yesE))
+				return true;
+
+			if (string.Equals(s, noR) || string.Equals(s, noE))
+				return false;
+
+			return false;
 		}
 
 		private static JObject CreateToken<TData>(string[] tree, ref JObject target, TData value)

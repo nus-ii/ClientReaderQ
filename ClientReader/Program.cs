@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Mime;
+using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,11 +16,10 @@ namespace ClientReader
 {
 	class Program
 	{
-		//Привет парень, это правки с рабочего от 03.08.16
+		//Привет парень, это правки с рабочего от 05.08.16
 		static void Main(string[] args)
 		{
-			Console.WriteLine();
-			string ss = "";
+		
 			Settings settings;
 			if (args!=null&&args.Length>=1&&!string.IsNullOrEmpty(args[0]))
 			{
@@ -48,7 +48,7 @@ namespace ClientReader
 			List<string> errorList=new List<string>();
 			List<string> badLineList=new List<string>();
 
-			var Stream = new StreamReader(filePathData, Encoding.GetEncoding("windows-1251"));
+			var Stream = new StreamReader(filePathData, Encoding.GetEncoding(settings.Encoding));
 			var bigResult = DataProcessor.Process(Stream, baseMap, selectorPath, dictionaryFromSettings,settings,ref errorList,ref badLineList);
 
 			bool success = ResultSave(bigResult, settings.SaveSettings);
@@ -57,13 +57,13 @@ namespace ClientReader
 				Console.WriteLine(l.ToString());
 			}
 
-			SaveList(badLineList,".csv","badLines",settings.SaveSettings);
+			SaveList(badLineList,".csv","badLines",settings,true);
 			foreach (var l in badLineList)
 			{
 				Console.WriteLine(l);
 			}
 
-			SaveList(errorList, ".txt", "errorList",settings.SaveSettings);
+			SaveList(errorList, ".txt", "errorList",settings);
 			foreach (var l in errorList)
 			{
 				Console.WriteLine(l);
@@ -72,9 +72,18 @@ namespace ClientReader
 			Console.ReadLine();
 		}
 
-		private static void SaveList(List<string> targetList, string ext, string dopname, Save saveSettings)
+		private static void SaveList(List<string> targetList, string ext, string dopname, Settings settings, bool withHeader=false)
 		{
+			Save saveSettings = settings.SaveSettings;
 			string result = "";
+			if (withHeader&&settings.FirstValueLineExcelLike>1)
+			{
+				for (int q = 0; q < settings.FirstValueLineExcelLike-1; q++)
+				{
+					result = result +";;;;;;" +"\r\n";
+				}
+			}
+			
 			foreach (var l in targetList)
 			{
 				result = result + l + "\r\n";

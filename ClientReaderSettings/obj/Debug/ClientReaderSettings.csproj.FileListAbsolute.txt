@@ -9,3 +9,4 @@ C:\Projects\ClientReaderQ\ClientReaderSettings\bin\Debug\ClientReaderSettings.pd
 C:\Projects\ClientReaderQ\ClientReaderSettings\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\ClientReaderQ\ClientReaderSettings\obj\Debug\ClientReaderSettings.dll
 C:\Projects\ClientReaderQ\ClientReaderSettings\obj\Debug\ClientReaderSettings.pdb
+C:\Projects\ClientReaderQ\ClientReaderSettings\obj\Debug\ClientReaderSettings.csprojResolveAssemblyReference.cache

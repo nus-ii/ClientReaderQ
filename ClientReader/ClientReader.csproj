@@ -51,8 +51,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Settings.json" />
-    <None Include="SettingsFilm.json" />
+    <None Include="Settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SettingsFilm.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="SettingsUser.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

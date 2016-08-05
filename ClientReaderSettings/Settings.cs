@@ -14,6 +14,7 @@ namespace ClientReaderSettings
 		public SpecMap SpecialMap;
 		public Save SaveSettings;
 		public int FirstValueLineExcelLike;
+		public string Encoding;
 	}
 
 
